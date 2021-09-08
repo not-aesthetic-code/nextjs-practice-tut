@@ -5,6 +5,8 @@ import DateIcon from "../icons/date-icon";
 import AddresIcon from "../icons/address-icon";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 
+import Image from "next/image"; // it optimizes size of images. Lazy loaded then
+
 function EventItem(props) {
   const { title, image, date, location, id } = props;
 
@@ -19,7 +21,8 @@ function EventItem(props) {
 
   return (
     <li className={classes.item}>
-      <img src={"/" + image} alt={title}></img>
+      <Image src={"/" + image} alt={title} width={250} height={160} />
+      {/* <img src={"/" + image} alt={title}></img> */}
       <div className={classes.content}>
         <div className={classes.summary}>
           <h2>event</h2>
